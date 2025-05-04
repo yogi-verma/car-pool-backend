@@ -38,6 +38,10 @@ app.use(cors());
 app.use("/api/members", memberRoutes);
 app.use("/api/carowners", carOwnerRoutes);
 
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
 // Socket.io Connection Handling
 io.on("connection", (socket) => {
   console.log(`✅ New user connected: ${socket.id}`);
